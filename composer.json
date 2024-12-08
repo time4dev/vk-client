@@ -1,13 +1,13 @@
 {
-    "name": "atehnix/vk-client",
+    "name": "time4dev/vk-client",
     "description": "PHP client for Vk.com API",
     "keywords": ["php", "api", "client", "vk", "vk.com", "vkontakte"],
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "ATehnix",
-            "email": "atehnix@gmail.com"
+            "name": "Time4dev",
+            "email": "2343319@gmail.com"
         }
     ],
     "require": {
