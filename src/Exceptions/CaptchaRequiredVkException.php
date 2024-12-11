@@ -18,5 +18,23 @@ namespace ATehnix\VkClient\Exceptions;
  */
 class CaptchaRequiredVkException extends VkException
 {
+    public string $captchaSid;
+    public string $captchaImg;
 
+    public function __construct(string $message, string $captchaSid, string $captchaImg)
+    {
+        parent::__construct($message);
+        $this->captchaSid = $captchaSid;
+        $this->captchaImg = $captchaImg;
+    }
+
+    public function getCaptchaSid(): string
+    {
+        return $this->captchaSid;
+    }
+
+    public function getCaptchaImg(): string
+    {
+        return $this->captchaImg;
+    }
 }

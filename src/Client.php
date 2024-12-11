@@ -12,6 +12,7 @@ namespace ATehnix\VkClient;
 
 use ATehnix\VkClient\Contracts\ClientInterface as ClientContract;
 use ATehnix\VkClient\Contracts\RequestInterface;
+use ATehnix\VkClient\Exceptions\CaptchaRequiredVkException;
 use ATehnix\VkClient\Exceptions\VkException;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\ClientInterface;
@@ -213,6 +214,10 @@ class Client implements ClientContract
 
         /** @var \Exception|\Throwable $exception */
         $exception = isset($map[$code]) ? $map[$code] : $map[0];
+
+        if ($exception == CaptchaRequiredVkException::class) {
+            return new $exception($message, $error['captcha_sid'], $error['captcha_img']);
+        }
 
         return new $exception($message, $code);
     }

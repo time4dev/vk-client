@@ -4,6 +4,7 @@
     "keywords": ["php", "api", "client", "vk", "vk.com", "vkontakte"],
     "license": "MIT",
     "type": "library",
+    "version": "1.5.2",
     "authors": [
         {
             "name": "Time4dev",
